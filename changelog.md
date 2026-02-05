@@ -1,3 +1,9 @@
+
+# 0.04
+- Began working on ping for `NetworkTroubleshooter.ps1`
+- Able to take input and perform a ping.
+    - Will need to check for PowerShell version as the Test-Connection command is very different from PowerShell version 5.1 compared to 7.x
+
 # 0.03
 - Added notes to the `NetworkTroubleshooter.ps1` to create the plan and flow of the script.
 
