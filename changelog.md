@@ -1,3 +1,6 @@
+# 0.05
+- Added a requirement for PowerShell version 5.1 to `NetworkTroubleshooter.ps1`
+- Began working on the PowerShell equivalent of tracert.
 
 # 0.04
 - Began working on ping for `NetworkTroubleshooter.ps1`
