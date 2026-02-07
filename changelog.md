@@ -1,3 +1,6 @@
+# 0.06
+- Begain work on save dialog box in `NetworkTroubleshooter.ps1`
+
 # 0.05
 - Added a requirement for PowerShell version 5.1 to `NetworkTroubleshooter.ps1`
 - Began working on the PowerShell equivalent of tracert.
