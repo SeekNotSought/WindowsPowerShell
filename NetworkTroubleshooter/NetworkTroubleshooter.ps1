@@ -10,7 +10,7 @@ $dialog = New-Object System.Windows.Forms.SaveFileDialog
 $dialog.Title = "Save your file"
 $dialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
 $dialog.DefaultExt = "txt"
-$dialog.FileName = "output.txt"
+$dialog.FileName = "results.txt"
 
 # Show dialog
 $result = $dialog.ShowDialog()
@@ -20,15 +20,25 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
     Write-Host "File will be saved to: $savePath"
 
     # Example: write something to the file
-    "Hello world!" | Out-File $savePath
+    "This is your script output" | Out-File $savePath -Encoding UTF8
 } else {
     Write-Host "Save canceled."
 }
 
 # Ask for IP to check & output the results.
 $IP_ToCheck = Read-Host -Prompt "Enter the IP you want to check"
-# Ping the IP.
-Test-Connection "$IP_ToCheck" -Count 4 
+#Checking input to ensure the value is not null or empty
+if ([string])::IsNullOrWhiteSpace($IP_ToCheck) {
+    Write-Host "No IP entered. Exiting ..."
+    exit 
+}
+# Ping the IP
+$results = Test-Connection "$IP_ToCheck" -Count 4 -ErrorAction SilentlyContinue
+
+if (-not $results) {
+    Write-Host "The ping failed or the host is unreachable."
+    exit
+}
 # Traceroute the IP.
 Test-NetConnection -ComputerName $IP_ToCheck -TraceRoute -InformationLevel Detailed
 # Look up the DNS record of the IP.
