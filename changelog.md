@@ -1,3 +1,6 @@
+# 0.10
+- Changed `if ([string])::ISNullOrWhiteSpace($IP_ToCheck)` on line 13 to `if ([string]::IsNullOrWhiteSpace($IP_ToCheck))` to resolve a detected problem.
+
 # 0.09
 - Continued work on save dialog box in `NetworkTroubleshooter.ps1`.
 - Added a check on the input for the IP address.

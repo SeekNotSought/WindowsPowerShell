@@ -28,7 +28,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
 # Ask for IP to check & output the results.
 $IP_ToCheck = Read-Host -Prompt "Enter the IP you want to check"
 #Checking input to ensure the value is not null or empty
-if ([string])::IsNullOrWhiteSpace($IP_ToCheck) {
+if ([string]::IsNullOrWhiteSpace($IP_ToCheck)) {
     Write-Host "No IP entered. Exiting ..."
     exit 
 }
@@ -39,6 +39,7 @@ if (-not $results) {
     Write-Host "The ping failed or the host is unreachable."
     exit
 }
+
 # Traceroute the IP.
 Test-NetConnection -ComputerName $IP_ToCheck -TraceRoute -InformationLevel Detailed
 # Look up the DNS record of the IP.
