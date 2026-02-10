@@ -17,29 +17,29 @@ $result = $dialog.ShowDialog()
 
 if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
     $savePath = $dialog.FileName
-    Write-Host "File will be saved to: $savePath"
+    Write-Output "File will be saved to: $savePath"
 
     # Example: write something to the file
     "This is your script output" | Out-File $savePath -Encoding UTF8
 } else {
-    Write-Host "Save canceled."
+    Write-Output "Save canceled." | Out-File $savePath -Append -Encoding UTF8 
 }
 
 # Ask for IP to check & output the results.
-$IP_ToCheck = Read-Host -Prompt "Enter the IP you want to check"
+$IP_ToCheck = Read-Host -Prompt "Enter the IP you want to check" | Out-String | Out-File $savePath -Append -Encoding UTF8 
 #Checking input to ensure the value is not null or empty
 if ([string]::IsNullOrWhiteSpace($IP_ToCheck)) {
-    Write-Host "No IP entered. Exiting ..."
+    Write-Output "No IP entered. Exiting ..." | Out-String | Out-File $savePath -Append -Encoding UTF8
     exit 
 }
 # Ping the IP
 $results = Test-Connection "$IP_ToCheck" -Count 4 -ErrorAction SilentlyContinue
 
 if (-not $results) {
-    Write-Host "The ping failed or the host is unreachable."
+    Write-Output "The ping failed or the host is unreachable." | Out-String | Out-File $savePath -Append -Encoding UTF8
     exit
 }
 
 # Traceroute the IP.
-Test-NetConnection -ComputerName $IP_ToCheck -TraceRoute -InformationLevel Detailed
+Test-NetConnection -ComputerName $IP_ToCheck -TraceRoute -InformationLevel Detailed | Out-String | Out-File $savePath -Append -Encoding UTF8
 # Look up the DNS record of the IP.

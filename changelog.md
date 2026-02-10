@@ -1,3 +1,6 @@
+# 0.11
+- Started working on appending results to the text file that was saved via the dialog box.
+
 # 0.10
 - Changed `if ([string])::ISNullOrWhiteSpace($IP_ToCheck)` on line 13 to `if ([string]::IsNullOrWhiteSpace($IP_ToCheck))` to resolve a detected problem.
 
