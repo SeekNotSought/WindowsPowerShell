@@ -1,3 +1,6 @@
+# 0.12
+- Fixed script to add the IP to the saved file. Before it caused the script to exit prematurely.
+
 # 0.11
 - Started working on appending results to the text file that was saved via the dialog box.
 

@@ -26,7 +26,8 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
 }
 
 # Ask for IP to check & output the results.
-$IP_ToCheck = Read-Host -Prompt "Enter the IP you want to check" | Out-String | Out-File $savePath -Append -Encoding UTF8 
+$IP_ToCheck = Read-Host -Prompt "Enter the IP you want to check"
+Add-Content -Path $dialog.Filename -Value $IP_ToCheck -Encoding UTF8
 #Checking input to ensure the value is not null or empty
 if ([string]::IsNullOrWhiteSpace($IP_ToCheck)) {
     Write-Output "No IP entered. Exiting ..." | Out-String | Out-File $savePath -Append -Encoding UTF8
