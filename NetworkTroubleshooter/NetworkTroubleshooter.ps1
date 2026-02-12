@@ -10,7 +10,7 @@ $dialog = New-Object System.Windows.Forms.SaveFileDialog
 $dialog.Title = "Save your file"
 $dialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
 $dialog.DefaultExt = "txt"
-$dialog.FileName = "results.txt"
+$dialog.FileName = "NetworkTroubleshooterResults_$(Get-Date -Format "yyyyMMdd_HHmmss").txt"
 
 # Show dialog
 $result = $dialog.ShowDialog()
@@ -20,27 +20,35 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
     Write-Output "File will be saved to: $savePath"
 
     # Example: write something to the file
-    "This is your script output" | Out-File $savePath -Encoding UTF8
+    "$(Get-Date): This is your script output" | Out-File $savePath -Encoding UTF8
 } else {
-    Write-Output "Save canceled." | Out-File $savePath -Append -Encoding UTF8 
+    Write-Output "$(Get-Date): Save canceled." | Out-File $savePath -Append -Encoding UTF8 
 }
 
 # Ask for IP to check & output the results.
-$IP_ToCheck = Read-Host -Prompt "Enter the IP you want to check"
-Add-Content -Path $dialog.Filename -Value $IP_ToCheck -Encoding UTF8
+$InputPrompt = "$(Get-Date): Enter the IP you want to check"
+$IP_ToCheck = Read-Host -Prompt $InputPrompt
+Add-Content -Path $dialog.Filename -Value $InputPrompt -Encoding UTF8
+Add-Content -Path $dialog.Filename -Value "$(Get-Date): The IP entered is: $IP_ToCheck" -Encoding UTF8
+#Add-Content -Path $dialog.Filename -Value $IP_ToCheck -Encoding UTF8
 #Checking input to ensure the value is not null or empty
 if ([string]::IsNullOrWhiteSpace($IP_ToCheck)) {
-    Write-Output "No IP entered. Exiting ..." | Out-String | Out-File $savePath -Append -Encoding UTF8
+    Write-Output "$(Get-Date): No IP entered. Exiting ..." | Out-String | Out-File $savePath -Append -Encoding UTF8
     exit 
 }
 # Ping the IP
-$results = Test-Connection "$IP_ToCheck" -Count 4 -ErrorAction SilentlyContinue
+$PingResults = Test-Connection "$IP_ToCheck" -Count 4 -ErrorAction SilentlyContinue 
 
-if (-not $results) {
-    Write-Output "The ping failed or the host is unreachable." | Out-String | Out-File $savePath -Append -Encoding UTF8
+if (-not $PingResults) {
+    Write-Output "$(Get-Date): The ping failed or the host is unreachable." | Out-String | Out-File $savePath -Append -Encoding UTF8
     exit
 }
-
+else {
+    Add-Content -Path $dialog.Filename -Value "$(Get-Date): Below are the ping results:"
+    $PingResults | Out-String | Out-File $savePath -Append -Encoding UTF8
+    #Add-Content -Path $dialog.Filename -Value $PingResults -Encoding UTF8
+}
 # Traceroute the IP.
+Add-Content -Path $dialog.Filename -Value "$(Get-Date): Below are the traceroute results:"
 Test-NetConnection -ComputerName $IP_ToCheck -TraceRoute -InformationLevel Detailed | Out-String | Out-File $savePath -Append -Encoding UTF8
 # Look up the DNS record of the IP.

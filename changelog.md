@@ -1,3 +1,8 @@
+# 0.13
+- Added timestamps to each entry in the log file.
+- Change the default filename to "NetworkTroubleShooter" with a timestamp.
+- Fixed output to the log file for the ping command.
+
 # 0.12
 - Fixed script to add the IP to the saved file. Before it caused the script to exit prematurely.
 
