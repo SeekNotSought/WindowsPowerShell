@@ -44,7 +44,7 @@ if (-not $PingResults) {
     exit
 }
 else {
-    Add-Content -Path $dialog.Filename -Value "$(Get-Date): Below are the ping results:"
+    Add-Content -Path $dialog.Filename -Value "$(Get-Date): Below are the ping results:" -Encoding UTF8
     $PingResults | Out-String | Out-File $savePath -Append -Encoding UTF8
     #Add-Content -Path $dialog.Filename -Value $PingResults -Encoding UTF8
 }
@@ -52,3 +52,18 @@ else {
 Add-Content -Path $dialog.Filename -Value "$(Get-Date): Below are the traceroute results:"
 Test-NetConnection -ComputerName $IP_ToCheck -TraceRoute -InformationLevel Detailed | Out-String | Out-File $savePath -Append -Encoding UTF8
 # Look up the DNS record of the IP.
+Add-Content -Path $dialog.Filename -Value "$(Get-Date): Below are the DNS record results:"
+$DNS = Resolve-DnsName -Name $IP_ToCheck -Type PTR -ErrorAction SilentlyContinue
+
+if ($DNS) {
+    "$(Get-Date): DNS Hostname: $($DNS.NameHost)" | Out-File $savePath -Append -Encoding UTF8
+}
+else {
+    "$(Get-Date): DNS Hostname: No PTR record found" | Out-File $savePath -Append -Encoding UTF8
+}
+
+Write-Host "$(Get-Date): The script has completed."
+Add-Content -Path $dialog.Filename -Value "$(Get-Date): The script has completed." -Encoding UTF8
+Write-Host "$(Get-Date): Exiting ..."
+Add-Content -Path $dialog.Filename -Value "$(Get-Date): Exiting ..." -Encoding UTF8
+exit

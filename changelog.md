@@ -1,3 +1,7 @@
+# 0.14
+- Added lookup of DNS record for supplied IP.
+- Added a couple lines indicating the script has completed to both the host and in the logs.
+
 # 0.13
 - Added timestamps to each entry in the log file.
 - Change the default filename to "NetworkTroubleShooter" with a timestamp.
