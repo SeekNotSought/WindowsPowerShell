@@ -1,3 +1,8 @@
+# 0.15
+- Added headers for script.
+- Added parameters for IP Address and Output file.
+- Added logic that if no parameters are supplied to prompt the user for the necessary information.
+
 # 0.14
 - Added lookup of DNS record for supplied IP.
 - Added a couple lines indicating the script has completed to both the host and in the logs.
