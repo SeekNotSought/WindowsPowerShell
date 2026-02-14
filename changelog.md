@@ -1,3 +1,10 @@
+# 0.16
+- Created the folder `RecycleBinCompare`
+- Created the file `CompareAllUsersRecycleBin.ps1`
+    - Will have script to look in every user's recycle bin and see if the files in the recycling bin still exists in the original location.
+- Created the file `CompareRecycleBin.ps1`
+    - Will have the script look in the current user's recycle bin and see if the files in the recycling bin still exists in the original location.
+
 # 0.15
 - Added headers for script.
 - Added parameters for IP Address and Output file.

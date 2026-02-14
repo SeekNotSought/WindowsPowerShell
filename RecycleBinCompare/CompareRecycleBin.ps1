@@ -1,0 +1,1 @@
+# Purpose: See if the current user's files in the recycle bin exist in their original locations.
