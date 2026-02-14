@@ -1,3 +1,7 @@
+# 0.17
+- Created a header for `CompareRecycleBin.ps1`
+
+
 # 0.16
 - Created the folder `RecycleBinCompare`
 - Created the file `CompareAllUsersRecycleBin.ps1`
