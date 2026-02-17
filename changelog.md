@@ -1,3 +1,9 @@
+# 0.19
+- Renamed the `CompareRecycleBin.ps1` to `GetRecycleBin.ps1`.
+- Changed the script contents in `GetRecycleBin.ps1` into a function.
+- Updated the headers in `GetRecycleBin.ps1`.
+- Started to work on `CompareAllUsersRecycleBin.ps1`
+
 # 0.18
 - Added the ability to get all of the files in the current user's recycling bin in `CompareRecycleBin.ps1`.
 

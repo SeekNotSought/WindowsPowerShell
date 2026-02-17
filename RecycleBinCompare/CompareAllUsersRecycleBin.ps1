@@ -23,3 +23,41 @@
     Windows OS
 #>
 # Purpose: Compare all user recycle bins to see if the files no longer exist in their original location.
+
+# Requires: Administrator privileges
+
+Write-Host "Enumerating all users' Recycle Bins..." -ForegroundColor Cyan
+
+# Get all SID folders under the system Recycle Bin
+$recycleRoot = "C:\$Recycle.Bin"
+$sidFolders = Get-ChildItem -Path $recycleRoot -Directory -ErrorAction SilentlyContinue
+
+$results = foreach ($sid in $sidFolders) {
+
+    # Resolve SID to username if possible
+    try {
+        $user = (New-Object System.Security.Principal.SecurityIdentifier($sid.Name)).Translate([System.Security.Principal.NTAccount]).Value
+    } catch {
+        $user = "Unknown ($($sid.Name))"
+    }
+
+    # Use Shell.Application to read metadata
+    $shell = New-Object -ComObject Shell.Application
+    $namespace = $shell.Namespace($sid.FullName)
+
+    if ($namespace-eq $null) { continue }
+
+    foreach ($item in $namespace.Items()) {
+        [PSCustomObject]@{
+            User          = $user
+            OriginalName  = $namespace.GetDetailsOf($item, 0)
+            OriginalPath  = $namespace.GetDetailsOf($item, 1)
+            DeletedDate   = $namespace.GetDetailsOf($item, 2)
+            Size          = $namespace.GetDetailsOf($item, 3)
+            RecycleBinSID = $sid.Name
+            RecycleBinDir = $sid.FullName
+        }
+    }
+}
+
+$results | Format-Table -AutoSize
