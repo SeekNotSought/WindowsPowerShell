@@ -1,6 +1,8 @@
+# 0.18
+- Added the ability to get all of the files in the current user's recycling bin in `CompareRecycleBin.ps1`.
+
 # 0.17
 - Created a header for `CompareRecycleBin.ps1`
-
 
 # 0.16
 - Created the folder `RecycleBinCompare`

@@ -22,3 +22,17 @@
     PowerShell 5.1 (required for specific versions of the the Test-Connection commands)
     Windows OS
 #>
+
+# List the contents of the recycling bin.
+$Shell = New-object -ComObject Shell.Application
+$RecycleBin = $Shell.Namespace(0xA) # 0xA = Recycle Bin
+$Items = $RecycleBin.Items()
+
+foreach ($Item in $Items) {
+    [PSCustomObject]@{
+        OriginalName = $RecycleBin.GetDetailsOf($Item, 0)
+        OriginalPath = $RecycleBin.GetDetailsOf($Item, 1)
+        DeletedDate = $RecycleBin.GetDetailsOf($Item, 2)
+        Size = $RecycleBin.GetDetailsOf($Item, 3)
+    }
+}
