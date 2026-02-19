@@ -10,13 +10,12 @@
     The file location to output the csv.
 
 .EXAMPLE
-    .\NetworkTroubleshooter.ps1 -OutputFile "C:/Output.csv"
-    Runs the script and outputs the csv to the file location
+    .\CompareAllUsersRecycleBin.ps1
 
 .NOTES
     Author: SeekNotSought
-    Version: 0.16
-    Last Updated: 2026-02-14
+    Version: 0.20
+    Last Updated: 2026-02-18
 
 .REQUIREMENTS
     PowerShell 5.1 (required for specific versions of the the Test-Connection commands)

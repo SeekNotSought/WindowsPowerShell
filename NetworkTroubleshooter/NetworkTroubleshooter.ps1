@@ -15,11 +15,10 @@
 
 .NOTES
     Author: SeekNotSought
-    Version: 0.15
-    Last Updated: 2026-02-13
+    Version: 0.20
+    Last Updated: 2026-02-18
 
     TODO:
-        - Clean up output for Add-Content commands.
         - Improve error messaging.
         - Add logging level parameter (Verbos, Quiet)
 
@@ -43,8 +42,6 @@ if (-not $OutputFile) {
     $dialog.FileName = "NetworkTroubleshooterResults_$(Get-Date -Format "yyyyMMdd_HHmmss").txt"
 
     # Show dialog
-    #$OutputFile = $dialog.ShowDialog()
-
     if ($dialog.ShowDialog() -eq "OK") {
         $OutputFile = $dialog.FileName
         Write-Output "File will be saved to: $OutputFile"
@@ -64,7 +61,6 @@ if (-not $IPAddress) {
     $IPAddress = Read-Host -Prompt $InputPrompt
     Add-Content -Path $OutputFile -Value $InputPrompt -Encoding UTF8
     Add-Content -Path $OutputFile -Value "$(Get-Date): The IP entered is: $IPAddress" -Encoding UTF8
-    #Add-Content -Path $dialog.Filename -Value $IPAddress -Encoding UTF8
 }
 
 #Checking input to ensure the value is not null or empty
@@ -81,15 +77,15 @@ if (-not $PingResults) {
     exit
 }
 else {
-    Add-Content -Path $dialog.Filename -Value "$(Get-Date): Below are the ping results for ${IPAddress}:" -Encoding UTF8
+    Add-Content -Path $OutputFile -Value "$(Get-Date): Below are the ping results for ${IPAddress}:" -Encoding UTF8
     $PingResults | Out-String | Out-File $OutputFile -Append -Encoding UTF8
-    #Add-Content -Path $dialog.Filename -Value $PingResults -Encoding UTF8
 }
+
 # Traceroute the IP.
-Add-Content -Path $dialog.Filename -Value "$(Get-Date): Below are the traceroute results:"
+Add-Content -Path $OutputFile -Value "$(Get-Date): Below are the traceroute results:"
 Test-NetConnection -ComputerName $IPAddress -TraceRoute -InformationLevel Detailed | Out-String | Out-File $OutputFile -Append -Encoding UTF8
 # Look up the DNS record of the IP.
-Add-Content -Path $dialog.Filename -Value "$(Get-Date): Below are the DNS record results:"
+Add-Content -Path $OutputFile -Value "$(Get-Date): Below are the DNS record results:"
 $DNS = Resolve-DnsName -Name $IPAddress -Type PTR -ErrorAction SilentlyContinue
 
 if ($DNS) {
@@ -100,7 +96,7 @@ else {
 }
 
 Write-Host "$(Get-Date): The script has completed."
-Add-Content -Path $dialog.Filename -Value "$(Get-Date): The script has completed." -Encoding UTF8
+Add-Content -Path $OutputFile -Value "$(Get-Date): The script has completed." -Encoding UTF8
 Write-Host "$(Get-Date): Exiting ..."
-Add-Content -Path $dialog.Filename -Value "$(Get-Date): Exiting ..." -Encoding UTF8
+Add-Content -Path $OutputFile -Value "$(Get-Date): Exiting ..." -Encoding UTF8
 exit

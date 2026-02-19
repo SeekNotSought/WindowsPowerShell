@@ -13,8 +13,8 @@ function Get-RecycleBinItem {
 
     .NOTES
         Author: SeekNotSought
-        Version: 0.16
-        Last Updated: 2026-02-14
+        Version: 0.20
+        Last Updated: 2026-02-18
 
     .REQUIREMENTS
         PowerShell 5.1 (required for specific versions of the the Test-Connection commands)

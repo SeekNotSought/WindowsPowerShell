@@ -1,3 +1,7 @@
+# 0.20
+- Updated the headers for all scripts.
+- Corrected the Path parameter for Add-Content commands.
+
 # 0.19
 - Renamed the `CompareRecycleBin.ps1` to `GetRecycleBin.ps1`.
 - Changed the script contents in `GetRecycleBin.ps1` into a function.
