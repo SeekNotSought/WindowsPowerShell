@@ -31,13 +31,25 @@ function Get-RecycleBinItem {
     }
     
     $Items = $RecycleBin.Items()
-
+    Write-Output "About to loop through each item in the Recycle Bin."
     foreach ($Item in $Items) {
+        $OriginalName = $RecycleBin.GetDetailsOf($Item, 0)
+        $OriginalPath = $RecycleBin.GetDetailsOf($Item, 1)
+        $DeletedDate = $RecycleBin.GetDetailsOf($Item, 2)
+        $Size = $RecycleBin.GetDetailsOf($Item, 3)
+
+        # Combine the path with the name to test existence.
+        $FullOriginalPath = Join-Path -Path $OriginalPath -ChildPath $OriginalName
+
         [PSCustomObject]@{
-            OriginalName = $RecycleBin.GetDetailsOf($Item, 0)
-            OriginalPath = $RecycleBin.GetDetailsOf($Item, 1)
-            DeletedDate = $RecycleBin.GetDetailsOf($Item, 2)
-            Size = $RecycleBin.GetDetailsOf($Item, 3)
+            OriginalName                = $OriginalName
+            OriginalPath                = $OriginalPath
+            DeletedDate                 = $DeletedDate
+            Size                        = $Size
+            FullOriginalPath            = $FullOriginalPath
+            ExistsInOriginalLocation    = Test-Path -LiteralPath $FullOriginalPath
+
         }
     }
 }
+

@@ -1,3 +1,6 @@
+# 0.21
+- In `GetRecycleBin.ps1`, the function now test to see if the file still exists in the original location.
+
 # 0.20
 - Updated the headers for all scripts.
 - Corrected the Path parameter for Add-Content commands.
