@@ -1,5 +1,10 @@
+# 0.22
+- Renamed `CompareAllUsersRecycleBin.ps1` to `GetAllRecycleBins.ps1`.
+- In `GetAllRecycleBins.ps1` added ability to grab virtualized Recycle Bin in addition to traditional Recycle Bin.
+- Cleaned up grammar.
+
 # 0.21
-- In `GetRecycleBin.ps1`, the function now test to see if the file still exists in the original location.
+- In `GetRecycleBin.ps1`, the function will now test to see if the file still exists in the original location.
 
 # 0.20
 - Updated the headers for all scripts.

@@ -48,7 +48,6 @@ function Get-RecycleBinItem {
             Size                        = $Size
             FullOriginalPath            = $FullOriginalPath
             ExistsInOriginalLocation    = Test-Path -LiteralPath $FullOriginalPath
-
         }
     }
 }
