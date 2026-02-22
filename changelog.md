@@ -1,3 +1,7 @@
+# 0.24
+- Renamed folder `UsernameResolver` to `Username`.
+- Created script `Get-AllUsers.ps1`.
+
 # 0.23
 - Created folder `UsernameResolver`.
 - Created powershell script `UsernameResolver.ps1`.
