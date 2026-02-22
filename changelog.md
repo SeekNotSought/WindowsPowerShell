@@ -1,3 +1,8 @@
+# 0.23
+- Created folder `UsernameResolver`.
+- Created powershell script `UsernameResolver.ps1`.
+- The script `UsernameResolve.ps1` retrieves all of the SID's and resolves their usernames.
+
 # 0.22
 - Renamed `CompareAllUsersRecycleBin.ps1` to `GetAllRecycleBins.ps1`.
 - In `GetAllRecycleBins.ps1` added ability to grab virtualized Recycle Bin in addition to traditional Recycle Bin.
