@@ -1,3 +1,7 @@
+# 0.25
+- Created folder `ApplicationControl`
+- Created script `UninstallApplication.ps1`
+
 # 0.24
 - Renamed folder `UsernameResolver` to `Username`.
 - Created script `Get-AllUsers.ps1`.
