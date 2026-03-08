@@ -1,3 +1,10 @@
+# 0.27
+- Created folder `EventGathering`.
+- Created script `ShutdownEvents.ps1`
+
+# 0.26
+- Created script `InstallApplication.ps1`
+
 # 0.25
 - Created folder `ApplicationControl`
 - Created script `UninstallApplication.ps1`
