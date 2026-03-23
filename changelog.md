@@ -1,3 +1,7 @@
+# 0.28
+- Created folder `WindowsUpdates`
+- Created script `WindowsUpdateTroubleshooter.ps1`
+
 # 0.27
 - Created folder `EventGathering`.
 - Created script `ShutdownEvents.ps1`
