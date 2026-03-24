@@ -1,3 +1,7 @@
+# 0.29
+- Created folder `VMControl`
+- Created script `VMHealthInventory.ps1`
+
 # 0.28
 - Created folder `WindowsUpdates`
 - Created script `WindowsUpdateTroubleshooter.ps1`
