@@ -1,3 +1,7 @@
+# 0.30
+- Renamed folder `Username` to `UserManagement`
+- Created script `UserProfileLifeCycle.ps1`
+
 # 0.29
 - Created folder `VMControl`
 - Created script `VMHealthInventory.ps1`

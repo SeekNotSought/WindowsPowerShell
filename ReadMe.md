@@ -23,3 +23,15 @@
 - Performes optional remediations including:
     - Start stopped VMs.
     - Remove old checkpoints.
+
+## UserProfileLifeCycle.ps1
+- Provides full lifecycle visibility of:
+    - Local Users
+    - Profile folders
+    - Last logon
+    - Last NTUSER.DAT write
+    - Stale profiles
+    - Orphaned profiles
+- Performs the following remediations and logs every action:
+    - Archives profiles before deletion.
+    - Only removes stale or orphaned entries.
