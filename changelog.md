@@ -1,3 +1,7 @@
+# 0.31
+- Added folder `TaskScheduler`
+- Created script `ScheduledTaskAuditor.ps1`
+
 # 0.30
 - Renamed folder `Username` to `UserManagement`
 - Created script `UserProfileLifeCycle.ps1`
