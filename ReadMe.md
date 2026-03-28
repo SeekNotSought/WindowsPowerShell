@@ -35,3 +35,17 @@
 - Performs the following remediations and logs every action:
     - Archives profiles before deletion.
     - Only removes stale or orphaned entries.
+
+## ScheduledTaskAuditor.ps1
+- Gives visibility into tasks including:
+    - State, trigger, run level, user context
+    - Last run result
+    - Action path validation
+    - Script signature validation
+- Checks for security & reliability of tasks.
+
+## NISTAlignedPowerGPO.ps1
+- Provides NIST SP 800-53 / 800-171 alignment.
+- NIST Control AC-11 provides session lock inactivity, password on wake.
+- NIST Control PE-13 provides power management, sleep/display timeout, energy-efficient defaults.
+- NIST Control SC-28 reduces exposure window by enforcing lock/sleep.

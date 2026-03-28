@@ -1,3 +1,7 @@
+# 0.32
+- Added folder `GPO`
+- Created script `NISTAlignedPowerGPO.ps1`
+
 # 0.31
 - Added folder `TaskScheduler`
 - Created script `ScheduledTaskAuditor.ps1`
