@@ -1,3 +1,6 @@
+# 0.33
+- Created script `Create-NISTPasswordGPO.ps1`
+
 # 0.32
 - Added folder `GPO`
 - Created script `NISTAlignedPowerGPO.ps1`
