@@ -1,3 +1,6 @@
+# 0.34
+- Created script `New-NISTGPO-AccountLockout.ps1`
+
 # 0.33
 - Created script `Create-NISTPasswordGPO.ps1`
 

@@ -49,3 +49,17 @@
 - NIST Control AC-11 provides session lock inactivity, password on wake.
 - NIST Control PE-13 provides power management, sleep/display timeout, energy-efficient defaults.
 - NIST Control SC-28 reduces exposure window by enforcing lock/sleep.
+
+## Create-NISTPasswordGPO.ps1
+- Creates a GPO for passwords:
+    - The script defaults the password length to 15 according to NIST Rev. 4.
+    - The script defaults the complexity to 0 in alignment with NIST.
+    - The script defaults the minimum password age to 0.
+    - The script prevents reusing the last 10 passwords by default.
+
+## New-NISTGPOP-AccountLockout.ps1
+- Creates a GPO to:
+    - Limit unsuccessful login attempts.
+    - Lock account after repeated failures.
+    - Automatically unlock after a defined period.
+    - Reset failure counter after a defined period.
