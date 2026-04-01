@@ -1,3 +1,6 @@
+# 0.35
+- Created script `New-NISTGPO-AuditPolicy.ps1`
+
 # 0.34
 - Created script `New-NISTGPO-AccountLockout.ps1`
 
