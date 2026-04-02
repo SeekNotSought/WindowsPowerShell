@@ -63,5 +63,9 @@
     - Lock account after repeated failures.
     - Automatically unlock after a defined period.
     - Reset failure counter after a defined period.
+
 ## New-NISTGPO-AuditPolicy.ps1
 - Configures the legacy audit policy GPO.
+
+## New-NISTGPO-AdvancedAuditPolicy.ps1
+- Configures auditpol.exe policy GPO.

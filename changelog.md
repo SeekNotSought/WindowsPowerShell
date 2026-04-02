@@ -1,3 +1,6 @@
+# 0.36
+- Created script `New-NISTGPO-AdvancedAuditPolicy.ps1`.
+
 # 0.35
 - Created script `New-NISTGPO-AuditPolicy.ps1`
 
