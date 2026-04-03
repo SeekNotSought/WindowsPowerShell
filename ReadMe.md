@@ -69,3 +69,10 @@
 
 ## New-NISTGPO-AdvancedAuditPolicy.ps1
 - Configures auditpol.exe policy GPO.
+
+## New-NistGPO-UserRightsAssignment.ps1
+- Creates or updates a GPO to configure User Rights Assignment settings aligned with NIST requirements:
+    - AC-2
+    - AC-3
+    - AC-6
+    - IA-2
