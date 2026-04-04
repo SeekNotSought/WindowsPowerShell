@@ -76,3 +76,10 @@
     - AC-3
     - AC-6
     - IA-2
+
+## New-NISTGPO-SecurityOptions.ps1
+- Creates or updates a GPO to configure Security Options settings aligned with the following NIST requirements:
+    - AC-17
+    - IA-2
+    - SC-7
+    - SC-28
