@@ -83,3 +83,8 @@
     - IA-2
     - SC-7
     - SC-28
+
+## New-NISTGPO-Firewall.ps1
+- Creates or updates a GPO to configure Windows Firewall to be aligned with the following NIST requirements:
+    - SC-7
+    - SC-18
