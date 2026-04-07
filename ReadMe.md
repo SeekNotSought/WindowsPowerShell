@@ -88,3 +88,10 @@
 - Creates or updates a GPO to configure Windows Firewall to be aligned with the following NIST requirements:
     - SC-7
     - SC-18
+
+## New-NISTGPO-SystemHardening.ps1
+- Creates or updates a GPO to configure System hardening Administrative Template settings aligned with the following NIST requirements.
+    - CM-6
+    - SC-4
+    - SC-5
+    - SC-7

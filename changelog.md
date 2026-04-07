@@ -1,5 +1,8 @@
+# 0.40
+- Created script `New-NISTGPO-SystemHardening.ps1`.
+
 # 0.39
-- Created script `New-NISTGPO-Firewall.ps1`
+- Created script `New-NISTGPO-Firewall.ps1`.
 
 # 0.38
 - Created script `New-NISTGPO-SecurityOptions.ps1`.
