@@ -95,3 +95,8 @@
     - SC-4
     - SC-5
     - SC-7
+
+## New-NISTGPO-NetworkHardening.ps1
+- Creates or updates a GPO to configure Network hardening Administrative Template settings aligned with the follwing NIST requirements:
+    - SC-7
+    - SC-8

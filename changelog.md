@@ -1,3 +1,6 @@
+# 0.41
+- Created script `New-NISTGPO-NetworkHardening.ps1`.
+
 # 0.40
 - Created script `New-NISTGPO-SystemHardening.ps1`.
 
