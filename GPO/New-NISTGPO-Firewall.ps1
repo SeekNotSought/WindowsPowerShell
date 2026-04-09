@@ -33,7 +33,7 @@
         -TargetOU "OU=Servers,DC=example,DC=com"
 
 .NOTES
-    Author: Carl
+    Author: SeekNotSought
     Purpose: NIST-aligned GPO automation
     Category: Windows Firewall
     Version: 1.0

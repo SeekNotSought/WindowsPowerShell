@@ -1,3 +1,6 @@
+# 0.42
+- Created script `New-NISTGPO-WindowsComponents.ps1`.
+
 # 0.41
 - Created script `New-NISTGPO-NetworkHardening.ps1`.
 

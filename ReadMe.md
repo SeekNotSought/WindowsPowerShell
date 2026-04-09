@@ -100,3 +100,9 @@
 - Creates or updates a GPO to configure Network hardening Administrative Template settings aligned with the follwing NIST requirements:
     - SC-7
     - SC-8
+
+## New-NISTGPO-WindowsComponents.ps1
+- Creates or updats a GPO to configure Windows Components hardening settings aligned with the following NIST requirements:
+    - SC-7
+    - SC-18
+    - SI-3

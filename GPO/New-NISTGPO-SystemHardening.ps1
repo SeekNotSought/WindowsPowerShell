@@ -30,7 +30,7 @@
         -TargetOU "OU=Workstations,DC=example,DC=com"
 
 .NOTES
-    Author: Carl
+    Author: SeekNotSought
     Purpose: NIST-aligned GPO automation
     Category: Administrative Templates – System
     Version: 1.0
