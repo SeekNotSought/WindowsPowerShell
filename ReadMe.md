@@ -106,3 +106,8 @@
     - SC-7
     - SC-18
     - SI-3
+
+## New-NISTGPO-AppLocker.ps1
+- Creates or updats a GPO to configure AppLocker rules aligned with the following NIST requirements:
+    - CM-7
+    - SI-7

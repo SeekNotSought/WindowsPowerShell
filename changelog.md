@@ -1,3 +1,6 @@
+# 0.43
+- Created script `New-NISTGPO-AppLocker.ps1`.
+
 # 0.42
 - Created script `New-NISTGPO-WindowsComponents.ps1`.
 
