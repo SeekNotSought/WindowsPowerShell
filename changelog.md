@@ -1,3 +1,6 @@
+# 0.44
+- Created script `New-NISTGPO-BaselineComplianceVerification.ps1`.
+
 # 0.43
 - Created script `New-NISTGPO-AppLocker.ps1`.
 

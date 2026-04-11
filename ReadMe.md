@@ -111,3 +111,17 @@
 - Creates or updats a GPO to configure AppLocker rules aligned with the following NIST requirements:
     - CM-7
     - SI-7
+
+## New-NISTGPO-BaselineComplianceVerification.ps1
+- Checks whether a system complies with the NIST baseline implemented by the above NIST scripts. It validates:
+1. Account Lockout Policy
+2. Audit Policy (Legacy)
+3. Advanced Audit Policy
+4. User Rights Assignment
+5. Security Options
+6. Windows Firewall Profiles
+7. System Hardening (Admin Templates)
+8. Network Hardening (Admin Templates)
+9. Windows Components Hardening
+10. AppLocker Policy
+- Results are outputted to the screen and exported to a CSV file.
