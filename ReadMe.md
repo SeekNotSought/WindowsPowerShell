@@ -125,3 +125,13 @@
 9. Windows Components Hardening
 10. AppLocker Policy
 - Results are outputted to the screen and exported to a CSV file.
+
+## New-NISTGPO-BackupAndVersioning.ps1
+- This script automates GPO backup and Versioning. It:
+    - Creates a timestamped backup directories.
+    - Backs up one or more GPOs
+    - Writes version metadata
+        - timestamp
+        - user
+        - notes
+    - Maintains a clean, professional version history.

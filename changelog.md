@@ -1,3 +1,6 @@
+# 0.45
+- Created script `New-NISTGPO-BackupAndVersioning.ps1`.
+
 # 0.44
 - Created script `New-NISTGPO-BaselineComplianceVerification.ps1`.
 
