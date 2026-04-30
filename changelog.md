@@ -1,3 +1,6 @@
+# 0.46
+- Created script `New-NISTGPO-RestoreAndRollback.ps1`.
+
 # 0.45
 - Created script `New-NISTGPO-BackupAndVersioning.ps1`.
 

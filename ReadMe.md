@@ -135,3 +135,6 @@
         - user
         - notes
     - Maintains a clean, professional version history.
+
+## New-NISTGPO-RestoreAndRollback.ps1
+- This script restores GPOs from versioned backups for NIST baseline rollbacks.
