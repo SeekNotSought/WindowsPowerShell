@@ -138,3 +138,11 @@
 
 ## New-NISTGPO-RestoreAndRollback.ps1
 - This script restores GPOs from versioned backups for NIST baseline rollbacks.
+
+## New-GPODeploymentPipeline.ps1
+- Promotes GPOs between environments (DEV, TST, PRD) using backup/import.
+- Follows a consistent pattern with:
+    - Config section
+    - Logging
+    - Menu-driven flow
+    - Support for multiple GPOs.

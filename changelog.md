@@ -1,3 +1,6 @@
+# 0.47
+- Created script `New-GPODeploymentPipeline.ps1`.
+
 # 0.46
 - Created script `New-NISTGPO-RestoreAndRollback.ps1`.
 
